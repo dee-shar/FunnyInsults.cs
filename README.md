@@ -5,7 +5,6 @@ Mobile-API for [Funny Insults](https://play.google.com/store/apps/details?id=com
 ```cs
 using System;
 using FunnyInsultsApi;
-using System.Threading.Tasks;
 
 namespace Application
 {
