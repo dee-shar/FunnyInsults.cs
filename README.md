@@ -14,7 +14,7 @@ namespace Application
         static async Task Main()
         {
             var api = new FunnyInsults();
-            string contents = await api.getContents();
+            string contents = await api.GetContents();
             Console.WriteLine(contents);
         }
     }
