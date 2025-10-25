@@ -2,7 +2,6 @@ using System;
 using System.Text;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Threading.Tasks;
 
 namespace FunnyInsultsApi
 {
@@ -25,28 +24,24 @@ namespace FunnyInsultsApi
             int orderByScore = 0)
         {
             var response = await httpClient.GetAsync($"{apiUrl}/contents/{language}?categoryid={categoryId}&countryid={countryId}&onlyvalidated={onlyValidated}&orderbyscore={orderByScore}");
-            response.EnsureSuccessStatusCode();
             return await response.Content.ReadAsStringAsync();
         }
 
         public async Task<string> GetCategories(string language = "en")
         {
             var response = await httpClient.GetAsync($"{apiUrl}/categories/{language}");
-            response.EnsureSuccessStatusCode();
             return await response.Content.ReadAsStringAsync();
         }
 
         public async Task<string> GetContentScore(int contentId)
         {
             var response = await httpClient.GetAsync($"{apiUrl}/content/score/{contentId}");
-            response.EnsureSuccessStatusCode();
             return await response.Content.ReadAsStringAsync();
         }
 
         public async Task<string> ReactToContent(int contentId, int reactionId)
         {
             var response = await httpClient.PostAsync($"{apiUrl}/vote/{contentId}/{reactionId}", null);
-            response.EnsureSuccessStatusCode();
             return await response.Content.ReadAsStringAsync();
         }
     }
