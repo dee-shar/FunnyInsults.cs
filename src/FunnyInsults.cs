@@ -17,7 +17,7 @@ namespace FunnyInsultsApi
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
-        public async Task<string> getContents(
+        public async Task<string> GetContents(
             string language = "en",
             int categoryId = 0, 
             int countryId = 0, 
@@ -29,21 +29,21 @@ namespace FunnyInsultsApi
             return await response.Content.ReadAsStringAsync();
         }
 
-        public async Task<string> getCategories(string language = "en")
+        public async Task<string> GetCategories(string language = "en")
         {
             var response = await httpClient.GetAsync($"{apiUrl}/categories/{language}");
             response.EnsureSuccessStatusCode();
             return await response.Content.ReadAsStringAsync();
         }
 
-        public async Task<string> getContentScore(int contentId)
+        public async Task<string> GetContentScore(int contentId)
         {
             var response = await httpClient.GetAsync($"{apiUrl}/content/score/{contentId}");
             response.EnsureSuccessStatusCode();
             return await response.Content.ReadAsStringAsync();
         }
 
-        public async Task<string> reactToContent(int contentId, int reactionId)
+        public async Task<string> ReactToContent(int contentId, int reactionId)
         {
             var response = await httpClient.PostAsync($"{apiUrl}/vote/{contentId}/{reactionId}", null);
             response.EnsureSuccessStatusCode();
