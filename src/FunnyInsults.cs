@@ -16,6 +16,7 @@ namespace FunnyInsultsApi
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
+        
         public async Task<string> GetContents(
             string language = "en",
             int categoryId = 0, 
