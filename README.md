@@ -3,7 +3,6 @@ Mobile-API for [Funny Insults](https://play.google.com/store/apps/details?id=com
 
 ## Example
 ```cs
-using System;
 using FunnyInsultsApi;
 
 namespace Application
